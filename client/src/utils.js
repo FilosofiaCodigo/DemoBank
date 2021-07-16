@@ -78,4 +78,13 @@ async function loadApp() {
   awaitWeb3()
 }
 
+const convertWeiToCrypto = (wei) => {
+  const cryptoValue = web3.utils.fromWei(wei, "ether");
+  return cryptoValue;
+};
+
+const convertCryptoToWei = (crypto) => {
+  return web3.utils.toWei(crypto, "ether");
+};
+
 loadApp()
